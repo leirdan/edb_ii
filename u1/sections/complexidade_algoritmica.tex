@@ -1,0 +1,42 @@
+\section{Análise de Algoritmos} 
+
+É fundamental estudarmos a complexidade de nossos algoritmos pois:
+
+\begin{itemize}
+  \item Podemos verificar sua eficácia e eficiência em diversas instâncias;
+  \item Adequamos-o à capacidade de processamento de diversas máquinas diferentes;
+  \item Podemos verificar se o algoritmo é viável.
+\end{itemize}
+
+O tempo de execução (eficiência) de um algoritmo depende de fatores como:
+
+\begin{itemize}
+  \item Infraestrutura utilizada;
+  \item Tamanho do problema (parâmetros grandes, ...);
+  \item Estruturas de dados utilizadas;
+  \item Linguagem e compilador usados;
+  \item Programador.
+\end{itemize}
+
+Por isso, a análise dos algoritmos deve ser feita de forma independente dos recursos de hardware, já que rodar o mesmo programa em computadores diferentes (por ex.) pode ter tempos de resposta diferentes.
+
+Então, para realizar esta análise, utilizamos o \textbf{Modelo de computação RAM}. Esse modelo abstrato é capaz de realizar todas as tarefas em um tempo \textit{t} constante.
+
+\subsection{Modelo de computação RAM}
+Suas principais características são:
+\begin{itemize}
+  \item Cada instrução $I$ possui um tempo associado $t(i)$ para ser operacionalizada em RAM.
+  \item O tempo total de execução do algoritmo $t(n)$ será dado por $\sum_{j=1}^{m} r_j t(I_j)$, onde $r_j$ é uma instrução de tipo $I_j$) e $t(I_j)$ é o tempo de execução da instrução.
+\end{itemize}
+
+\subsection{Complexidade em Tempo}
+\textbf{Def.} A função $t_A : {0, 1}^* \rightarrow \mathbb{N}$ é dita complexidade do algoritmo $A$ se, para toda entrada $x$, $A$ termina em exatamente $t_a(x)$ passos.
+
+Podemos analisar os seguintes casos:
+\begin{itemize}
+  \item \textbf{Melhor caso}: analisamos o número \textit{mínimo} de passos para executar o algoritmo;
+  \item \textbf{Pior caso}: analisamos o número \textit{máximo} de passos para executar o algoritmo;
+\end{itemize}
+A complexidade média não costuma ser tão utilizada, tendo em vista que envolve a soma das probabilidades de cada caso acontecer, algo bem complexo de se calcular.
+
+- Nota: instruções que dependem do tamanho da entrada são escritas como $t(n)$, e as constantes, $t$. Por ex., um algoritmo de complexidade $6t(n) + 4t$ tem 4 instruções constantes e independentes, e 6 que dependem da entrada.

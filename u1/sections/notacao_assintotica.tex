@@ -1,0 +1,33 @@
+\section{Complexidade assintótica}
+
+A complexidade assintótica fornece limites para a função de complexidade. É representada em:
+\begin{itemize}
+  \item Big O: representa o pior dos casos;
+  \item Ômega: representa o melhor dos casos;
+  \item Theta: representa o caso onde o pior e o melhor caso tem o mesmo desempenho.
+\end{itemize}
+
+\subsection{Big O}
+Suponha duas funções $f(n), g(n)$. Diz-se que $f(n)$ é de ordem $g(n)$, ou $f(n)$ é $O(g(n))$, se o crescimento de $f(n)$ é, no máximo, tão rápido quanto o crescimento de $g(n)$.
+
+\textbf{Def.}: Diz-se que $f(n)$ é $O(g(n))$ se existem as constantes reais positivas $C$ e $n_0$ tais que $f(n) \le cg(n)$, para todo $n > n_0$.
+
+Esta def. é o mesmo que dizer que $\lim_{n\to\infty} \frac{f(n)}{g(n)}$ existe e é finito. Note que:
+\begin{itemize}
+  \item Se $\lim_{n\to\infty} \frac{f(n)}{g(n)} \in \mathbb{R}^*_+$, então $f(n) \in O(g(n))$ ($f(n)$ é de ordem $O(g(n))$); 
+  \item Se $\lim_{n\to\infty} \frac{f(n)}{g(n)} = 0$, então $f(n) \in O(g(n))$ ($f(n)$ é de ordem $O(g(n))$); 
+  \item Se $\lim_{n\to\infty} \frac{f(n)}{g(n)} = +\infty$, então $f(n) \notin O(g(n))$ ($f(n)$ não é de ordem $O(g(n))$). 
+\end{itemize}
+
+\subsubsection{Regras}
+Básicas:
+\begin{itemize}
+  \item Termos de ordem menores não importam;
+  \item Constantes não importam;
+  \item Dar ênfase onde é gasto mais tempo (repetição de código);
+  \item Verificar a complexidade de funções nativas da linguagem.
+\end{itemize}
+
+Regra da Soma: se um algoritmo se divide em duas ou mais partes independentes, a complexidade $t(n)$ total será dada por $t(n) = t_1(n) + t_2(n) + \cdots + t_{i}(n)$ e o algoritmo será de ordem $O(max{f_1(n), f_2(n), \cdots, f_i(n)})$. \\ 
+
+Regra do Produto: se um algoritmo se divide em duas ou mais partes dependentes, a complexidade $t(n)$ total será dada por $t(n) = t_1(n) \cdot t_2(n) \cdot \cdots \cdot t_{i}(n)$ e o algoritmo será de ordem $O(f_1(n) \cdot f_2(n) \cdot \cdots \cdot f_i(n))$. 
